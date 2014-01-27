@@ -50,7 +50,7 @@
 
 #define DO_ROUND            3
 
-typedef NS_ENUM(int, DoAlertViewTransitionStyle) {
+typedef NS_ENUM(NSInteger, DoAlertViewTransitionStyle) {
     DoTransitionStyleTopDown = 0,
     DoTransitionStyleBottomUp,
     DoTransitionStyleFade,
@@ -58,7 +58,7 @@ typedef NS_ENUM(int, DoAlertViewTransitionStyle) {
     DoTransitionStyleLine,
 };
 
-typedef NS_ENUM(int, DoAlertViewContentType) {
+typedef NS_ENUM(NSInteger, DoAlertViewContentType) {
     DoContentNone = 0,
     DoContentImage,
     DoContentMap,
@@ -82,8 +82,8 @@ typedef void(^DoAlertViewHandler)(DoAlertView *alertView);
     UIView                  *_vAlert;
 }
 
-@property (readwrite)   int         nAnimationType;
-@property (readwrite)   int         nContentMode;
+@property (readwrite)   DoAlertViewTransitionStyle nAnimationType;
+@property (readwrite)   DoAlertViewContentType     nContentMode;
 
 @property (readwrite)   double      dRound;
 @property (readwrite)   BOOL        bDestructive;

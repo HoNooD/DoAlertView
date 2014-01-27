@@ -430,12 +430,16 @@
             case DoTransitionStyleLine:
                 _vAlert.frame = CGRectMake((self.bounds.size.width - DO_VIEW_WIDTH) / 2, self.bounds.size.height / 2.0, DO_VIEW_WIDTH, 1);
                 break;
-
         }
         
     } completion:^(BOOL finished) {
         
         switch (_nAnimationType) {
+            case DoTransitionStyleTopDown:
+            case DoTransitionStyleBottomUp:
+            case DoTransitionStyleFade:
+                break;
+                
             case DoTransitionStylePop:
             {
                 [UIView animateWithDuration:0.1 animations:^(void) {
@@ -444,7 +448,7 @@
                 }];
             }
                 break;
-
+                
             case DoTransitionStyleLine:
             {
                 [UIView animateWithDuration:0.2 animations:^(void) {
@@ -520,6 +524,11 @@
         [UIView animateWithDuration:0.2 animations:^(void) {
             
             switch (_nAnimationType) {
+                case DoTransitionStyleTopDown:
+                case DoTransitionStyleBottomUp:
+                case DoTransitionStyleFade:
+                    break;
+                    
                 case DoTransitionStylePop:
                     [UIView setAnimationDelay:0.05];
                     self.alpha = 0.0;
